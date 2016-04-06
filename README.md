@@ -1,6 +1,9 @@
 # Android-Next-PullToRefresh
 The next version of Android PullToRefresh.
 
+## Screens
+<img src="screens.gif" height="640" alt="" />
+
 ## Add dependency
 **Gradle dependency:**
 ``` groovy
