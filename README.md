@@ -19,7 +19,7 @@ The next version of Android PullToRefresh.
  	* **ViewPager**
 * Maven Support.
 * Indicators to show the user when a Pull-to-Refresh is available.
-* Support for **ListFragment**!
+* Support for **ListFragment**.
 * Lots of customisation options!
 
 
