@@ -67,7 +67,7 @@ Node id ptr_header, ptr_body, ptr_footer, ptr_header_decoration should be kept a
                 // network request...
                 // mWebView.reload();
             }
-        });
+      });
         
       // tell when to end refreshing
       mWebView.setWebViewClient(new WebViewClient() {
