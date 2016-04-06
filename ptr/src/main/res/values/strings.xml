@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PullToRefresh</string>
+
+    <string name="ptr_header_pull">Pull to refresh...</string>
+    <string name="ptr_header_release">Release to refresh...</string>
+    <string name="ptr_header_complete">Refreshing completed</string>
+    <string name="ptr_header_refreshing">Refreshing...</string>
+
+    <string name="ptr_footer_pull">Pull to load more...</string>
+    <string name="ptr_footer_release">Release to load more...</string>
+    <string name="ptr_footer_complete">Completed loading more</string>
+    <string name="ptr_footer_refreshing">Loading more...</string>
+</resources>

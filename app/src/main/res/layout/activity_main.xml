@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <com.sanfriend.ptr.PullToRefreshLayout
+        android:id="@+id/ptrLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/refreshBackgroundColor"
+        app:pull_style="classic"
+        app:refresh_trigger_offset="60dp">
+
+        <include
+            android:id="@+id/ptr_header"
+            layout="@layout/ptr_default_header"/>
+
+        <WebView
+            android:id="@+id/ptr_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.sanfriend.ptr.PullToRefreshLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

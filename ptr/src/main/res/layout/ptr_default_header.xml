@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sanfriend.ptr.PullToRefreshHeaderView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.sanfriend.ptr.helper.TopCropImageView
+        android:id="@+id/ptr_header_decoration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ptr_header_decoration"
+        android:visibility="gone"  />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/refresh_header_height">
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="48dp"
+            android:layout_toLeftOf="@+id/tvRefresh"
+            android:background="@drawable/ptr_arrow" />
+
+        <ImageView
+            android:id="@+id/ivSuccess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="48dp"
+            android:layout_toLeftOf="@+id/tvRefresh"
+            android:background="@drawable/ptr_done" />
+
+        <ProgressBar
+            android:id="@+id/pbProgress"
+            style="?android:attr/progressBarStyleSmallInverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="48dp"
+            android:layout_toLeftOf="@+id/tvRefresh" />
+
+        <TextView
+            android:id="@+id/tvRefresh"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+</com.sanfriend.ptr.PullToRefreshHeaderView>
