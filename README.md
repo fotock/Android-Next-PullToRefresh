@@ -39,7 +39,7 @@ or
             android:id="@+id/ptr_header"
             layout="@layout/ptr_default_header"/>
 	
-	<!-- ScrollView, ListView, GridView, WebView,..., any view here -->
+		<!-- ScrollView, ListView, GridView, WebView,..., any view here -->
         <WebView
             android:id="@+id/ptr_body"
             android:layout_width="match_parent"
@@ -54,32 +54,31 @@ Node id ptr_header, ptr_body, ptr_footer, ptr_header_decoration should be kept a
 
 **Activity**
 ``` java
-    private PullToRefreshLayout mPtr;
+private PullToRefreshLayout mPtr;
     ...
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-      mPtr = (PullToRefreshLayout)findViewById(R.id.ptrLayout);
-      ...
-      // set listener
-      mPtr.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                // network request...
-                // mWebView.reload();
-            }
-      });
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    mPtr = (PullToRefreshLayout)findViewById(R.id.ptrLayout);
+    ...
+    // set listener
+    mPtr.setOnRefreshListener(new OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            // mWebView.reload();
+        }
+    });
         
-      // tell when to end refreshing
-      mWebView.setWebViewClient(new WebViewClient() {
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
+    // tell when to end refreshing
+    mWebView.setWebViewClient(new WebViewClient() {
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
                 
-                if (mPtr != null && mPtr.isRefreshing()) mPtr.setRefreshing(false);
-            }
-      });
-      ...
-    }
+            if (mPtr != null && mPtr.isRefreshing()) mPtr.setRefreshing(false);
+        }
+    });
+    ...
+}
 ```
 
 
