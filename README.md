@@ -38,7 +38,8 @@ or
         <include
             android:id="@+id/ptr_header"
             layout="@layout/ptr_default_header"/>
-
+	
+	<!-- ScrollView, ListView, GridView, WebView,..., any view here -->
         <WebView
             android:id="@+id/ptr_body"
             android:layout_width="match_parent"
