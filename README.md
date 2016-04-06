@@ -2,7 +2,7 @@
 The next version of Android PullToRefresh.
 
 ## Screens
-<img src="screens.gif" height="640" alt="" />
+<img src="screens.gif" height="480" alt="" />
 
 ## Add dependency
 **Gradle dependency:**
