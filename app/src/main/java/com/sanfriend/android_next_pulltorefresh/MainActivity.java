@@ -8,45 +8,49 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+import com.sanfriend.android_next_pulltorefresh.R;
+import com.sanfriend.ptr.OnRefreshListener;
+import com.sanfriend.ptr.PullToRefreshLayout;
 
 public class MainActivity extends AppCompatActivity {
+    private WebView mWebView;
+    private PullToRefreshLayout mPtr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_main);
+
+        mPtr = (PullToRefreshLayout)findViewById(R.id.ptrLayout);
+        mWebView = (WebView)findViewById(R.id.ptr_body);
+        mWebView.loadUrl("https://sanfriend.com/ptr.html");
+        mWebView.setWebViewClient(new WebViewClient() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+
+                if (mPtr != null && mPtr.isRefreshing()) mPtr.setRefreshing(false);
+            }
+
+        });
+
+        // first-time refresh
+        mWebView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mPtr.setRefreshing(true);
+            }
+        }, 10);
+
+        mPtr.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mWebView.reload();
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
