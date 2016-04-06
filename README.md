@@ -1,8 +1,28 @@
 # Android-Next-PullToRefresh
 The next version of Android PullToRefresh.
 
+
 ## Screens
 <img src="screens.gif" height="480" alt="" />
+
+
+## Features
+* Supports both Pulling Down from the top, and Pulling Up from the bottom (or even both).
+* Animated Scrolling for all devices.
+* As it's a container, so its child view theoretically could be any view. Surely working with:
+ 	* **ListView**
+ 	* **ExpandableListView**
+ 	* **GridView**
+ 	* **WebView**
+ 	* **ScrollView**
+ 	* **HorizontalScrollView**
+ 	* **ViewPager**
+* Maven Support.
+* Indicators to show the user when a Pull-to-Refresh is available.
+* Support for **ListFragment**!
+* Lots of customisation options!
+
+
 
 ## Add dependency
 **Gradle dependency:**
@@ -20,6 +40,7 @@ or
 	<version>1.0.1</version>
 </dependency>
 ```
+
 
 
 ## Sample usage
@@ -55,6 +76,9 @@ or
 Node id ptr_header, ptr_body, ptr_footer, ptr_header_decoration should be kept as is.
 
 
+
+
+
 **Activity**
 ``` java
 private PullToRefreshLayout mPtr;
@@ -86,6 +110,8 @@ protected void onCreate(Bundle savedInstanceState) {
 
 
 
+
+
 ## Why this
 1. Tried [Andriod-PullToRefresh](https://github.com/chrisbanes/Android-PullToRefresh), but it is discontinued and its WebView performs really bad.
 2. Tried [SwipeToLoadLayout](https://github.com/Aspsine/SwipeToLoadLayout), no header decoration images.
@@ -94,9 +120,14 @@ protected void onCreate(Bundle savedInstanceState) {
 
 
 
+
+
 ## Acknowledgments
 1. [SwipeToLoadLayout](https://github.com/Aspsine/SwipeToLoadLayout)
 2. [EthanWang](https://github.com/ethanwang)
+
+
+
 
 
 ### License
